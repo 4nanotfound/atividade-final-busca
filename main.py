@@ -5,12 +5,11 @@ from algorithms.bfs import BFS
 from algorithms.dfs import DFS
 from algorithms.a_star import AStar
 
-
 def print_result(name: str, result):
     print(f"\n{'='*40}")
     print(f"Algoritmo : {name}")
     if result.found:
-        print(f"Solução   : {' → '.join(result.actions)}")
+        print(f"Solução   : {' -> '.join(result.actions)}")
         print(f"Custo     : {result.path_cost}")
         print(f"Profund.  : {result.depth}")
     else:
@@ -19,9 +18,8 @@ def print_result(name: str, result):
     print(f"Gerados   : {result.nodes_generated}")
     print(f"Fronteira : {result.max_frontier_size} (máx)")
 
-
 if __name__ == "__main__":
-    initial = State((2, 8, 3, 1, 6, 4, 7, 0, 5))   # ~20 movimentos até a solução
+    initial = State((1, 8, 3, 2, 6, 4, 7, 0, 5))  # ~20 movimentos até a solução
 
     print("Estado inicial:")
     print(initial)
